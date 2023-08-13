@@ -31,7 +31,7 @@
         </ul>
         <form class="d-flex">
           <button class="btn btn-primary" @click.prevent="changeTheme()">
-            {{ !useDarkNavbar ? "Use Dark Navbar" : "Use Light Navbar" }}
+            ☀️
           </button>
         </form>
       </div>
