@@ -18,16 +18,11 @@
       <div class="collapse navbar-collapse d-flex" id="navbarNav">
         <ul class="navbar-nav flex-grow-1">
           <li v-for="(page, index) in pages" :key="index" class="nav-item">
-            <a
-              class="nav-link"
-              :class="{ active: activePage == index }"
-              aria-current="page"
-              :href="page.link.url"
-              :title="`This si the
-                                    ${page.link.text}`"
+            <navbar-link
+              :page="page"
+              :isActive="activePage === index"
               @click.prevent="navLinkClick(index)"
-              >{{ page.link.text }}</a
-            >
+            ></navbar-link>
           </li>
         </ul>
         <form class="d-flex">
@@ -41,7 +36,9 @@
 </template>
 
 <script>
+import NavbarLink from "./NavbarLink.vue";
 export default {
+  components: { NavbarLink },
   props: ["pages", "activePage", "navLinkClick"],
   data() {
     return {
