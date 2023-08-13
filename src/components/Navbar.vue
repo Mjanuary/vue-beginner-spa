@@ -27,11 +27,11 @@
 
           <li>
             <router-link
-              to="/pages/create"
+              to="/pages"
               class="nav-link"
               aria-current="page"
               active-class="active"
-              >Create page</router-link
+              >Pages</router-link
             >
           </li>
         </ul>
