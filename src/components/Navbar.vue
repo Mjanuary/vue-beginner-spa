@@ -23,7 +23,8 @@
             class="nav-item"
             :page="page"
             :isActive="activePage === index"
-            @click.prevent="navLinkClick(index)"
+            :index="index"
+            @activated="$emit('activated')"
           ></navbar-link>
         </ul>
         <form class="d-flex">
@@ -40,7 +41,7 @@
 import NavbarLink from "./NavbarLink.vue";
 export default {
   components: { NavbarLink },
-  props: ["pages", "activePage", "navLinkClick"],
+  props: ["pages", "activePage"],
   created() {
     this.getThemeSetting();
   },
