@@ -1,15 +1,18 @@
 <template>
-  <p>{{ counter }}</p>
+  <p>{{ data.counter }}</p>
   <button @click.prevent="click">add</button>
 </template>
 
 <script setup>
 import { ref, reactive } from "vue";
 
-let counter = ref(0);
+// let counter = ref(0);
+const data = reactive({ counter: 0 });
 function click() {
-  counter.value++;
+  //   counter.value++;
+  data.counter++;
 }
+
 // export default {
 //   data() {
 //     return {
