@@ -3,12 +3,7 @@
     <form action="">
       <div class="mb-3">
         <label for="" class="form-label">Page Title </label>
-        <input
-          type="text"
-          class="form-control"
-          :value="pageTitle"
-          @input="(e) => (pageTitle = e.target.value)"
-        />
+        <input type="text" class="form-control" :v-model="pageTitle" />
       </div>
 
       <div class="mb-3">
@@ -17,7 +12,10 @@
       </div>
 
       <div class="mb-3">
-        <button class="btn btn-primary" @click.prevent="pageCreated({})">
+        <button
+          class="btn btn-primary"
+          @click.prevent="pageCreated({ pageTitle })"
+        >
           Create Page
         </button>
       </div>
