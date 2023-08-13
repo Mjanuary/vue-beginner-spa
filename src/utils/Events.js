@@ -3,7 +3,7 @@ const events = new Map();
 export default {
   $on(eventName, fn) {
     if (!events.has(eventName)) {
-      EventCounts.set(eventName, []);
+      events.set(eventName, []);
     }
 
     events.get(eventName).push(fn);

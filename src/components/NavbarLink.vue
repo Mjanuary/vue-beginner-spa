@@ -6,6 +6,7 @@
       aria-current="page"
       :href="page.link.url"
       :title="`This si the ${page.link.text}`"
+      @click.prevent="$emit('activate')"
       >{{ page.link.text }}</a
     >
   </li>
