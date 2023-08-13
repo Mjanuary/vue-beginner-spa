@@ -1,12 +1,14 @@
 <template>
-  <a
-    class="nav-link"
-    :class="activeClasses"
-    aria-current="page"
-    :href="page.link.url"
-    :title="`This si the ${page.link.text}`"
-    >{{ page.link.text }}</a
-  >
+  <li>
+    <a
+      class="nav-link"
+      :class="activeClasses"
+      aria-current="page"
+      :href="page.link.url"
+      :title="`This si the ${page.link.text}`"
+      >{{ page.link.text }}</a
+    >
+  </li>
 </template>
 
 <script>

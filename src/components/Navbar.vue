@@ -17,17 +17,14 @@
       </button>
       <div class="collapse navbar-collapse d-flex" id="navbarNav">
         <ul class="navbar-nav flex-grow-1">
-          <li
+          <navbar-link
             v-for="(page, index) in publishedPages"
             :key="index"
             class="nav-item"
-          >
-            <navbar-link
-              :page="page"
-              :isActive="activePage === index"
-              @click.prevent="navLinkClick(index)"
-            ></navbar-link>
-          </li>
+            :page="page"
+            :isActive="activePage === index"
+            @click.prevent="navLinkClick(index)"
+          ></navbar-link>
         </ul>
         <form class="d-flex">
           <button class="btn btn-primary" @click.prevent="changeTheme()">
