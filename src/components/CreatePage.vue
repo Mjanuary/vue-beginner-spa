@@ -18,7 +18,11 @@
         </div>
 
         <div class="mb-3">
-          <button class="btn btn-primary" @click.prevent="submitForm">
+          <button
+            class="btn btn-primary"
+            @click.prevent="submitForm"
+            :disabled="isFormInvalid"
+          >
             Create Page
           </button>
         </div>
@@ -45,6 +49,13 @@
 <script>
 export default {
   props: ["pageCreated"],
+  computed: {
+    isFormInvalid() {
+      return (
+        !this.pageTitle || !this.content || !this.linkText || !this.linkUrl
+      );
+    },
+  },
   data() {
     return {
       pageTitle: "janvier",
