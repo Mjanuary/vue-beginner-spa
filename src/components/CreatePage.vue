@@ -3,7 +3,7 @@
     <form action="">
       <div class="mb-3">
         <label for="" class="form-label">Page Title </label>
-        <input type="text" class="form-control" :v-model="pageTitle" />
+        <input type="text" class="form-control" v-model="pageTitle" />
       </div>
 
       <div class="mb-3">
