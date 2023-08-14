@@ -19,16 +19,13 @@
         </div>
 
         <div class="mb-3">
-          <button
-            class="btn btn-primary me-2"
-            @click.prevent="submit"
-            :disabled="isFormInvalid"
-          >
+          <button class="btn btn-primary me-2" @click.prevent="submit">
             Edit
           </button>
-          <button class="btn btn-secondary" @click="goToPagesList">
+          <button class="btn btn-secondary me-2" @click="goToPagesList">
             Cancel
           </button>
+          <button class="btn btn-danger" @click="deletePage">Delete</button>
         </div>
       </div>
       <div class="col">
@@ -73,6 +70,17 @@ function submit() {
 
   goToPagesList();
 }
+
+const deletePage = () => {
+  if (confirm("Are you sure you want to delete this page?")) {
+    pages.removeItem(page.pageTitle);
+    goToPagesList();
+
+    bus.$emit("page-deleted", {
+      pageTitle: page.pageTitle,
+    });
+  }
+};
 
 function goToPagesList() {
   router.push({ path: "/pages" });

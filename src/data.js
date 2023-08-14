@@ -22,4 +22,9 @@ export default {
 
     localStorage.setItem(pagesKey, JSON.stringify(pageStore));
   },
+
+  removeItem(pageTitle) {
+    pageStore = pageStore.filter((p) => p.pageTitle !== pageTitle);
+    localStorage.setItem(pagesKey, JSON.stringify(pageStore));
+  },
 };
